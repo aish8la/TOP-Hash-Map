@@ -7,6 +7,8 @@ export class HashMap {
             console.error("Key can only be of type string!");
             return false;
         }
+
+        return true;
     }
 
     hash(key) {
