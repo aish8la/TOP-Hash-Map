@@ -1,5 +1,6 @@
 import { HashMap } from "./hash-map.js";
+import { KeyedLinkedList } from "./keyed-linked-list.js";
 
-const hashMap = new HashMap();
+const hashMap = new HashMap(KeyedLinkedList);
 
 console.log(hashMap.hash("hello"));

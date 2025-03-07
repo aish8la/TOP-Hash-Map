@@ -1,4 +1,10 @@
 export class HashMap {
+
+    constructor(linkedListClass) {
+        this.#linkedList = new linkedListClass();
+    }
+
+    #linkedList;
     #capacity = 16;
     #loadFactor = 0.75;
 
