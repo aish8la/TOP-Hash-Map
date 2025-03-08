@@ -37,6 +37,22 @@ export class HashMap {
         return hashCode;
     }
 
+    set(key, value) {
+        if (!this.validateKey) return;
+        const hashCode = this.hash(key);
+        const currentBucket = this.#hashMap[hashCode];
+        const NodeIndex = currentBucket.find(key)
+
+        if (NodeIndex === null) {
+            currentBucket.append(key, value);
+            return;
+        }
+
+        const Node = currentBucket.at(NodeIndex);
+
+        Node.value = value;
+    }
+
     test() {
         console.log(this.#hashMap);
     }
