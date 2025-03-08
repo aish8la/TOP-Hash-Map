@@ -81,6 +81,14 @@ export class HashMap {
         return true;
     }
 
+    length() {
+        let nodeCount = 0;
+        for (let i = 0; i < this.#capacity; i++) {
+            nodeCount += this.#hashMap[i].size();
+        }
+        return nodeCount;
+    }
+
     test() {
         for(let i = 0; i < this.#capacity; i++) {
             console.log(`[${i}] : `,this.#hashMap[i].toString());
