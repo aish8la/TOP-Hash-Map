@@ -121,6 +121,19 @@ export class KeyedLinkedList {
     return (string += "null");
   }
 
+  findNode(key) {
+    let currentNode = this.#head;
+    let index = 0;
+
+    while (currentNode !== null) {
+      if (currentNode.key === key) return currentNode;
+      currentNode = currentNode.nextNode;
+      index++;
+    }
+
+    return null;
+  }
+
   insertAt(key, value, index) {
     //If index is start of list call prepend
     if (index === 0) {
