@@ -51,16 +51,13 @@ export class HashMap {
 
     set(key, value) {
         const currentBucket = this.bucket(key);
-        const NodeIndex = currentBucket.find(key)
+        const node = currentBucket.findNode(key);
 
-        if (NodeIndex === null) {
+        if (node === null) {
             currentBucket.append(key, value);
             return;
         }
-
-        const Node = currentBucket.at(NodeIndex);
-
-        Node.value = value;
+        node.value = value;
     }
 
     test() {
