@@ -61,16 +61,16 @@ export class HashMap {
     }
 
     get(key) {
-        const bucket = this.bucket(key);
-        const node = bucket.findNode(key);
+        const currentBucket = this.bucket(key);
+        const node = currentBucket.findNode(key);
 
         if(node === null) return null;
         return node.value;
     }
 
     has(key) {
-        const bucket = this.bucket(key);
-        return bucket.contains(key);
+        const currentBucket = this.bucket(key);
+        return currentBucket.contains(key);
     }
 
     test() {
