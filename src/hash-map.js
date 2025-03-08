@@ -54,6 +54,8 @@ export class HashMap {
     }
 
     test() {
-        console.log(this.#hashMap);
+        for(let i = 0; i < this.#capacity; i++) {
+            console.log(`[${i}] : `,this.#hashMap[i].toString());
+        }
     }
 }

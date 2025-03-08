@@ -3,8 +3,8 @@ import { KeyedLinkedList } from "./keyed-linked-list.js";
 
 const hashMap = new HashMap(KeyedLinkedList);
 
-// console.log(hashMap.hash("hello"));
+console.log(hashMap.hash("dog"));
 hashMap.set("dog", "carlos");
 hashMap.set("cat", "megacarlos");
 hashMap.set("dog", "newcarlos");
-// hashMap.test();
+hashMap.test();
