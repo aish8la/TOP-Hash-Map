@@ -73,6 +73,14 @@ export class HashMap {
         return currentBucket.contains(key);
     }
 
+    remove(key) {
+        const currentBucket = this.bucket(key);
+        const nodeIndex = currentBucket.find(key);
+        if (nodeIndex === null) return false;
+        currentBucket.removeAt(nodeIndex);
+        return true;
+    }
+
     test() {
         for(let i = 0; i < this.#capacity; i++) {
             console.log(`[${i}] : `,this.#hashMap[i].toString());

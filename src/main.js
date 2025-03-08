@@ -3,12 +3,15 @@ import { KeyedLinkedList } from "./keyed-linked-list.js";
 
 const hashMap = new HashMap(KeyedLinkedList);
 
+hashMap.test();
 console.log(hashMap.hash("dog"));
-hashMap.set("null", "carlos");
-console.log("null : ", hashMap.get("null"));
+hashMap.set("dog", "carlos");
 hashMap.set("cat", "megacarlos");
 console.log("has : ", hashMap.has("dog"));
 hashMap.set("dog", "newcarlos");
 console.log("has : ", hashMap.has("dog"));
-// hashMap.test();
-console.log("get : ", hashMap.get("moon"));
+console.log("remove moon :", hashMap.remove("moon"));
+hashMap.test();
+console.log("get : ", hashMap.get("dog"));
+
+
