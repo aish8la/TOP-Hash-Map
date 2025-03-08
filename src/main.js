@@ -47,3 +47,17 @@ test.test();
 console.log("length :", test.length())
 console.log("capacity :", test.capacity)
 console.log("current Load :",test.currentLoad());
+
+test.set('newKey', 'New Value')
+
+test.test();
+console.log("length :", test.length())
+console.log("capacity :", test.capacity)
+console.log("current Load :",test.currentLoad());
+
+test.set('newKey', 'Override')
+
+test.test();
+console.log("length :", test.length())
+console.log("capacity :", test.capacity)
+console.log("current Load :",test.currentLoad());

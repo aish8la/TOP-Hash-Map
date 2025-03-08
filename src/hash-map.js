@@ -2,7 +2,7 @@ export class HashMap {
 
     constructor(linkedListClass) {
         this.#linkedListClass = linkedListClass;
-        this.#hashMap = this.createHashMapArr(this.#capacity);
+        this.#hashMap = this.createHashMapArr();
     }
 
     #linkedListClass;
@@ -18,8 +18,8 @@ export class HashMap {
         return this.length() / this.#capacity;
     }
 
-    createHashMapArr(arrLength) {
-        return Array.from( {length : arrLength }, () => new this.#linkedListClass());
+    createHashMapArr() {
+        return Array.from( {length : this.#capacity }, () => new this.#linkedListClass());
     }
 
     validateKey(key) {
@@ -63,6 +63,7 @@ export class HashMap {
 
         if (node === null) {
             currentBucket.append(key, value);
+            this.growHashMap();
             return;
         }
         node.value = value;
@@ -140,7 +141,15 @@ export class HashMap {
     }
 
     clear() {
-        this.#hashMap = this.createHashMapArr(this.#capacity);
+        this.#hashMap = this.createHashMapArr();
+    }
+
+    growHashMap() {
+        if (this.#loadFactor >= this.currentLoad()) return;
+        const currentEntries = this.entries();
+        this.#capacity *= 2;
+        this.#hashMap = this.createHashMapArr();
+        currentEntries.forEach(entry => this.set(...entry));
     }
 
     test() {
