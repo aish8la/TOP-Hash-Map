@@ -60,6 +60,14 @@ export class HashMap {
         node.value = value;
     }
 
+    get(key) {
+        const bucket = this.bucket(key);
+        const node = bucket.findNode(key);
+
+        if(node === null) return null;
+        return node.value;
+    }
+
     test() {
         for(let i = 0; i < this.#capacity; i++) {
             console.log(`[${i}] : `,this.#hashMap[i].toString());
