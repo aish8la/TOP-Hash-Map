@@ -10,6 +10,10 @@ export class HashMap {
     #loadFactor = 0.75;
     #hashMap;
 
+    get capacity() {
+        return this.#capacity;
+    }
+
     currentLoad() {
         return this.length() / this.#capacity;
     }

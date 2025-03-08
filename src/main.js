@@ -36,6 +36,7 @@ test.set('lion', 'golden')
 
 test.test();
 console.log("length :", test.length())
+console.log("capacity :", test.capacity)
 console.log("current Load :",test.currentLoad());
 
 test.set('lion', 'black')
@@ -44,4 +45,5 @@ test.set('jacket', 'green')
 
 test.test();
 console.log("length :", test.length())
+console.log("capacity :", test.capacity)
 console.log("current Load :",test.currentLoad());
