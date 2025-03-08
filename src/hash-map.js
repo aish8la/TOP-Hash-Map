@@ -37,4 +37,7 @@ export class HashMap {
         return hashCode;
     }
 
+    test() {
+        console.log(this.#hashMap);
+    }
 }
