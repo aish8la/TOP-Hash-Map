@@ -10,8 +10,8 @@ export class HashMap {
     #loadFactor = 0.75;
     #hashMap;
 
-    createHashMapArr(length) {
-        this.#hashMap = Array.from( {length : this.#capacity }, () => new this.#linkedListClass());
+    createHashMapArr(arrLength) {
+        this.#hashMap = Array.from( {length : arrLength }, () => new this.#linkedListClass());
     }
 
     validateKey(key) {
