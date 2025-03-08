@@ -68,6 +68,11 @@ export class HashMap {
         return node.value;
     }
 
+    has(key) {
+        const bucket = this.bucket(key);
+        return bucket.contains(key);
+    }
+
     test() {
         for(let i = 0; i < this.#capacity; i++) {
             console.log(`[${i}] : `,this.#hashMap[i].toString());
