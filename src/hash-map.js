@@ -117,6 +117,20 @@ export class HashMap {
         return valuesArray;
     }
 
+    entries() {
+        let entriesArray = [];
+        let currentNode;
+        for(let i = 0; i < this.#capacity; i++) {
+            if (this.#hashMap[i].head === null) continue;
+            currentNode = this.#hashMap[i].head;
+            while(currentNode !== null) {
+                entriesArray.push([currentNode.key, currentNode.value]);
+                currentNode = currentNode.nextNode;
+            }
+        }
+        return entriesArray;
+    }
+
     clear() {
         this.#hashMap = this.createHashMapArr(this.#capacity);
     }

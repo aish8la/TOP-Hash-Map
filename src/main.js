@@ -15,9 +15,9 @@ console.log("remove moon :", hashMap.remove("moon"));
 hashMap.test();
 console.log("get : ", hashMap.get("dog"));
 console.log("count :", hashMap.length());
-console.log(hashMap.values());
+console.log(hashMap.entries());
 hashMap.clear();
-console.log(hashMap.values());
+console.log(hashMap.entries());
 // hashMap.test();
 // console.log("count :", hashMap.length());
 
