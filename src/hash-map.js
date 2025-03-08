@@ -16,11 +16,16 @@ export class HashMap {
 
     validateKey(key) {
         if(typeof key !== "string") {
-            console.error("Key can only be of type string!");
-            return false;
+            throw new Error("Key can only be of type string!");
         }
 
         return true;
+    }
+
+    validateIndex(index) {
+        if (index < 0 || index >= this.#capacity) {
+            throw new Error("Trying to access index out of bounds");
+        }
     }
 
     hash(key) {
@@ -37,10 +42,15 @@ export class HashMap {
         return hashCode;
     }
 
+    bucket(key) {
+
+        const index = this.hash(key);
+        this.validateIndex(index);
+        return this.#hashMap[index]
+    }
+
     set(key, value) {
-        if (!this.validateKey) return;
-        const hashCode = this.hash(key);
-        const currentBucket = this.#hashMap[hashCode];
+        const currentBucket = this.bucket(key);
         const NodeIndex = currentBucket.find(key)
 
         if (NodeIndex === null) {
