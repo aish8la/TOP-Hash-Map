@@ -2,7 +2,7 @@ export class HashMap {
 
     constructor(linkedListClass) {
         this.#linkedListClass = linkedListClass;
-        this.createHashMapArr(this.#capacity);
+        this.#hashMap = this.createHashMapArr(this.#capacity);
     }
 
     #linkedListClass;
@@ -11,7 +11,7 @@ export class HashMap {
     #hashMap;
 
     createHashMapArr(arrLength) {
-        this.#hashMap = Array.from( {length : arrLength }, () => new this.#linkedListClass());
+        return Array.from( {length : arrLength }, () => new this.#linkedListClass());
     }
 
     validateKey(key) {
@@ -87,6 +87,10 @@ export class HashMap {
             nodeCount += this.#hashMap[i].size();
         }
         return nodeCount;
+    }
+
+    clear() {
+        this.#hashMap = this.createHashMapArr(this.#capacity);
     }
 
     test() {
