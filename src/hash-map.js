@@ -2,11 +2,17 @@ export class HashMap {
 
     constructor(linkedListClass) {
         this.#linkedListClass = linkedListClass;
+        this.createHashMapArr(this.#capacity);
     }
 
     #linkedListClass;
     #capacity = 16;
     #loadFactor = 0.75;
+    #hashMap;
+
+    createHashMapArr(length) {
+        this.#hashMap = Array.from( {length : this.#capacity }, () => new this.#linkedListClass());
+    }
 
     validateKey(key) {
         if(typeof key !== "string") {
