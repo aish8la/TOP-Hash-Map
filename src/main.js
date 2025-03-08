@@ -36,6 +36,12 @@ test.set('lion', 'golden')
 
 test.test();
 console.log("length :", test.length())
+console.log("current Load :",test.currentLoad());
 
+test.set('lion', 'black')
+test.set('ice cream', 'blue')
+test.set('jacket', 'green')
 
-
+test.test();
+console.log("length :", test.length())
+console.log("current Load :",test.currentLoad());

@@ -10,6 +10,10 @@ export class HashMap {
     #loadFactor = 0.75;
     #hashMap;
 
+    currentLoad() {
+        return this.length() / this.#capacity;
+    }
+
     createHashMapArr(arrLength) {
         return Array.from( {length : arrLength }, () => new this.#linkedListClass());
     }
